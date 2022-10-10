@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/community"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/community"
+        android:backgroundTint="#145DA0"
+        android:text="자취인 커뮤니티"/>
+
+    <Button
+        android:id="@+id/checklist"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/checkbox"
+        android:backgroundTint="#145DA0"
+        android:text="집안일 체크리스트"/>
+
+    <Button
+        android:id="@+id/map"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/map"
+        android:backgroundTint="#145DA0"
+        android:text="편의시설 지도"/>
+
+    <Button
+        android:id="@+id/safety"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/safety"
+        android:backgroundTint="#145DA0"
+        android:text="여성 안심"/>
+
+    <Button
+        android:id="@+id/mypage"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/mypage"
+        android:backgroundTint="#145DA0"
+        android:text="마이페이지"/>
+
+
+
+</LinearLayout>
