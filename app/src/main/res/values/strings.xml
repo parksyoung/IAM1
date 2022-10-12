@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">IAM1</string>
+    <string name="app_name">나혼자산다</string>
     <string name="Login">LOG IN</string>
     <string name="Forgot">FORGOT ID/PW</string>
-    <string name="Signin">SIGN IN OR REGISTER</string>
+    <string name="Signup">SIGN UP OR REGISTER</string>
 </resources>
