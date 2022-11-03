@@ -25,20 +25,12 @@
         android:text="집안일 체크리스트"/>
 
     <Button
-        android:id="@+id/map"
+        android:id="@+id/safetymap"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/map"
         android:backgroundTint="#145DA0"
-        android:text="편의시설 지도"/>
-
-    <Button
-        android:id="@+id/safety"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/safety"
-        android:backgroundTint="#145DA0"
-        android:text="여성 안심"/>
+        android:text="안심 편의 지도"/>
 
     <Button
         android:id="@+id/mypage"
