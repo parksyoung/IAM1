@@ -27,7 +27,7 @@
             android:name=".Mypage"
             android:exported="false" />
         <activity
-            android:name=".Safety"
+            android:name=".Safetymap"
             android:exported="false" />
         <activity
             android:name=".Map"

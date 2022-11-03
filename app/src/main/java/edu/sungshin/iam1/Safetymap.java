@@ -8,14 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Safety extends AppCompatActivity {
+public class Safetymap extends AppCompatActivity {
 
     Button call_112, call_119;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_safety);
+        setContentView(R.layout.activity_safetymap);
 
         Button call_112 = (Button) findViewById(R.id.button1);
         Button call_119 = (Button) findViewById(R.id.button2);
