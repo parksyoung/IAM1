@@ -1,6 +1,5 @@
 package edu.sungshin.iam1;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +16,6 @@ public class Checklist extends AppCompatActivity {
 
     Button insert;
     EditText todoEdit;
-    CalendarView calendarView;
     RecyclerView recyclerView;
     private ArrayList<Todo> todoArrayList;
     private TodoAdapter todoAdapter;
@@ -26,7 +24,6 @@ public class Checklist extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checklist);
-        calendarView = findViewById(R.id.calenderview);
         insert = (Button) findViewById(R.id.insert);
         todoEdit = (EditText) findViewById(R.id.todoList);
         recyclerView = (RecyclerView) findViewById(R.id.recycler);

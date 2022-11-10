@@ -7,12 +7,13 @@
     android:orientation="vertical"
     tools:context=".Checklist">
 
-    <CalendarView
-        android:id="@+id/calenderview"
+    <TextView
         android:layout_gravity="center"
-        android:layout_margin="10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="오늘의 할 일"
+        android:textSize="25dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
