@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "823199582433",
+    "project_id": "mpiam-5e05c",
+    "storage_bucket": "mpiam-5e05c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823199582433:android:f49d23028de737030b4fa0",
+        "android_client_info": {
+          "package_name": "edu.sungshin.iam1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823199582433-8ufhq9odd4cgqu1igtknqp0s48no3cgm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.sungshin.iam1",
+            "certificate_hash": "a875bca8f82c9615630027232cea0e801514f82f"
+          }
+        },
+        {
+          "client_id": "823199582433-kja0s3k944u23h44cvlfs4praqfra922.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTXWhuXYTn29e9BaECOSN-TzbKRWP4UnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823199582433-kja0s3k944u23h44cvlfs4praqfra922.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
