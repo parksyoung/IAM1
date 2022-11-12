@@ -15,30 +15,68 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
-    private FirebaseAuth mAuth;
-    Button check;
+    private FirebaseAuth mAuth; //파이어베이스 인증 처리
+    private DatabaseReference mDB; // 실시간 데이터베이스
+    private  EditText id, pw, pwcheck;
+    private Button check;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         mAuth = FirebaseAuth.getInstance();
+        mDB = FirebaseDatabase.getInstance().getReference("IAM");
 
-        check = (Button) findViewById(R.id.check);
+        id = findViewById(R.id.id);
+        pw = findViewById(R.id.pw);
+        pwcheck = findViewById(R.id.pwcheck);
+        check = findViewById(R.id.register);
+
         check.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()){
+                // 회원가입 처리 시작
+                String strId = id.getText().toString();
+                String strPw = pw.getText().toString();
+                String strpwcheck = pwcheck.getText().toString();
+
+                //FirebaseAuth 진행
+                mAuth.createUserWithEmailAndPassword(strId, strPw).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                            UserAccount account = new UserAccount();
+                            account.setIdToken(firebaseUser.getUid());
+                            account.setEmailId(firebaseUser.getEmail());
+                            account.setPassword(strPw);
+
+                            //setValue : database에 insert 하는 것
+                            mDB.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
+
+                            Toast.makeText(RegisterActivity.this, "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                                Toast.makeText(RegisterActivity.this, "회원가입에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                /*
+               switch (view.getId()){
                     case R.id.check:
                         signUp();
                         break;
-                }
+                }*/
             }
         });
     }
-
+/*
     private void signUp() {
         String id = ((EditText)findViewById(R.id.id)).getText().toString();
         String password = ((EditText)findViewById(R.id.pw)).getText().toString();
@@ -62,13 +100,15 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 });
             }
+            // 비밀번호와 비밀번호 확인이 일치X
             else {
                 Toast.makeText(RegisterActivity.this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
             }
         }
+        // 아이디, 비밀번호, 비밀번호 확인 중 하나라도 공백일 때
         else {
             Toast.makeText(RegisterActivity.this, "아이디와 비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 
 }

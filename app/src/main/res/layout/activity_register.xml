@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
+        android:inputType="textPassword"
         android:hint="비밀번호"
         android:minHeight="48dp"/>
 
@@ -44,10 +45,11 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:hint="비밀번호 확인"
+        android:inputType="textPassword"
         android:minHeight="48dp"/>
 
     <Button
-        android:id="@+id/check"
+        android:id="@+id/register"
         android:layout_width="225dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
