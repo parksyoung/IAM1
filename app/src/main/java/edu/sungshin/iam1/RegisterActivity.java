@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -59,10 +60,13 @@ public class RegisterActivity extends AppCompatActivity {
                             //setValue : database에 insert 하는 것
                             mDB.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
 
+                            Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                            startActivity(intent);
+
                             Toast.makeText(RegisterActivity.this, "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
                         }
                         else{
-                                Toast.makeText(RegisterActivity.this, "회원가입에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this, "이미 존재하는 계정이거나 올바르지 않은 형식입니다. 다시 입력해주십시오.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
