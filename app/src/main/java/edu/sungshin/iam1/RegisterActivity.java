@@ -46,73 +46,36 @@ public class RegisterActivity extends AppCompatActivity {
                 String strPw = pw.getText().toString();
                 String strpwcheck = pwcheck.getText().toString();
 
-                //FirebaseAuth 진행
-                mAuth.createUserWithEmailAndPassword(strId, strPw).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            FirebaseUser firebaseUser = mAuth.getCurrentUser();
-                            UserAccount account = new UserAccount();
-                            account.setIdToken(firebaseUser.getUid());
-                            account.setEmailId(firebaseUser.getEmail());
-                            account.setPassword(strPw);
+                if(strPw.equals(strpwcheck)) {
+                    //비밀번호 일치 시 FirebaseAuth 진행
+                    mAuth.createUserWithEmailAndPassword(strId, strPw).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                                UserAccount account = new UserAccount();
+                                account.setIdToken(firebaseUser.getUid());
+                                account.setEmailId(firebaseUser.getEmail());
+                                account.setPassword(strPw);
 
-                            //setValue : database에 insert 하는 것
-                            mDB.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
+                                //setValue : database에 insert 하는 것
+                                mDB.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
 
-                            Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
-                            startActivity(intent);
+                                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                                startActivity(intent);
 
-                            Toast.makeText(RegisterActivity.this, "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
+                            }
+                            else{
+                                Toast.makeText(RegisterActivity.this, "이미 존재하는 계정이거나 올바르지 않은 형식입니다. 다시 입력해주십시오.", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                        else{
-                            Toast.makeText(RegisterActivity.this, "이미 존재하는 계정이거나 올바르지 않은 형식입니다. 다시 입력해주십시오.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-                /*
-               switch (view.getId()){
-                    case R.id.check:
-                        signUp();
-                        break;
-                }*/
+                    });
+                }
+                else {
+                    Toast.makeText(RegisterActivity.this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
-/*
-    private void signUp() {
-        String id = ((EditText)findViewById(R.id.id)).getText().toString();
-        String password = ((EditText)findViewById(R.id.pw)).getText().toString();
-        String passwordCheck = ((EditText)findViewById(R.id.pwcheck)).getText().toString();
-
-        // 아이디, 비밀번호, 비밀번호 확인이 공백이 아닐 때
-        if(id.length() > 0 && password.length() > 0 && passwordCheck.length() > 0){
-            // 비밀번호와 비밀번호 확인이 일치할 때
-            if(password.equals(passwordCheck)) {
-                mAuth.createUserWithEmailAndPassword(id, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(RegisterActivity.this, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show();
-                        }
-                        else{
-                            if(task.getException().toString() != null){
-                                Toast.makeText(RegisterActivity.this, "회원가입에 실패했습니다.", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    }
-                });
-            }
-            // 비밀번호와 비밀번호 확인이 일치X
-            else {
-                Toast.makeText(RegisterActivity.this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
-            }
-        }
-        // 아이디, 비밀번호, 비밀번호 확인 중 하나라도 공백일 때
-        else {
-            Toast.makeText(RegisterActivity.this, "아이디와 비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show();
-        }
-    }*/
-
 }

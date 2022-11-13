@@ -13,11 +13,20 @@
         android:layout_marginStart="65dp"
         android:layout_marginTop="124dp"
         android:layout_marginEnd="65dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="20dp"
         android:layout_gravity="center"
         android:textColor="#41729F"
         android:textSize="40sp"
         android:text="회원가입"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:textColor="#41729F"
+        android:textSize="15dp"
+        android:text="(인터넷 미연결 시 회원가입이 진행되지 않습니다)"/>
 
     <EditText
         android:id="@+id/id"
