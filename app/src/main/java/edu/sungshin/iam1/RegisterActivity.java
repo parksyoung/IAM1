@@ -46,34 +46,39 @@ public class RegisterActivity extends AppCompatActivity {
                 String strPw = pw.getText().toString();
                 String strpwcheck = pwcheck.getText().toString();
 
-                if(strPw.equals(strpwcheck)) {
-                    //비밀번호 일치 시 FirebaseAuth 진행
-                    mAuth.createUserWithEmailAndPassword(strId, strPw).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
-                                FirebaseUser firebaseUser = mAuth.getCurrentUser();
-                                UserAccount account = new UserAccount();
-                                account.setIdToken(firebaseUser.getUid());
-                                account.setEmailId(firebaseUser.getEmail());
-                                account.setPassword(strPw);
+                if(strId.length()>0 && strPw.length()>0 && strpwcheck.length()>0){
+                    if(strPw.equals(strpwcheck)) {
+                        //비밀번호 일치 시 FirebaseAuth 진행
+                        mAuth.createUserWithEmailAndPassword(strId, strPw).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if(task.isSuccessful()){
+                                    FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                                    UserAccount account = new UserAccount();
+                                    account.setIdToken(firebaseUser.getUid());
+                                    account.setEmailId(firebaseUser.getEmail());
+                                    account.setPassword(strPw);
 
-                                //setValue : database에 insert 하는 것
-                                mDB.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
+                                    //setValue : database에 insert 하는 것
+                                    mDB.child("UserAccount").child(firebaseUser.getUid()).setValue(account);
 
-                                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
-                                startActivity(intent);
+                                    Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                                    startActivity(intent);
 
-                                Toast.makeText(RegisterActivity.this, "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(RegisterActivity.this, "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
+                                }
+                                else{
+                                    Toast.makeText(RegisterActivity.this, "이미 존재하는 계정이거나 올바르지 않은 형식입니다. 다시 입력해주십시오.", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                            else{
-                                Toast.makeText(RegisterActivity.this, "이미 존재하는 계정이거나 올바르지 않은 형식입니다. 다시 입력해주십시오.", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
+                        });
+                    }
+                    else {
+                        Toast.makeText(RegisterActivity.this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else {
-                    Toast.makeText(RegisterActivity.this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                else{
+                    Toast.makeText(RegisterActivity.this, "아이디와 비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
