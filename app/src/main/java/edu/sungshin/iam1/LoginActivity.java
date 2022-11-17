@@ -45,21 +45,27 @@ public class LoginActivity extends AppCompatActivity {
                 String strId = id.getText().toString();
                 String strPw = pw.getText().toString();
 
-                mAuth.signInWithEmailAndPassword(strId, strPw).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            //로그인 성공
-                            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                            startActivity(intent);
-                            Toast.makeText(getApplicationContext(), "혼자 사는 당신! 환영합니다!",Toast.LENGTH_SHORT).show();
-                            finish(); // 현재 액티비티 파괴
+                if(strId.length()>0 && strPw.length()>0){
+                    mAuth.signInWithEmailAndPassword(strId, strPw).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                //로그인 성공
+                                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                startActivity(intent);
+                                Toast.makeText(getApplicationContext(), "혼자 사는 당신! 환영합니다!",Toast.LENGTH_SHORT).show();
+                                finish(); // 현재 액티비티 파괴
+                            }
+                            else{
+                                Toast.makeText(getApplicationContext(), "현재 존재하는 계정이 아닙니다.아이디랑 비밀번호를 다시 확인 하시거나 회원가입을 하세요.", Toast.LENGTH_SHORT).show();
+                            }
                         }
-                        else{
-                            Toast.makeText(getApplicationContext(), "현재 존재하는 계정이 아닙니다.아이디랑 비밀번호를 다시 확인 하시거나 회원가입을 하세요.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+                    });
+                }
+                else{
+                    Toast.makeText(LoginActivity.this, "아이디와 비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
