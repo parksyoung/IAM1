@@ -12,7 +12,7 @@
         android:id="@+id/community"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/community"
+        android:drawableLeft="@drawable/community2"
         android:backgroundTint="#145DA0"
         android:text="자취인 커뮤니티"/>
 
@@ -20,7 +20,7 @@
         android:id="@+id/checklist"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/checkbox"
+        android:drawableLeft="@drawable/checklist"
         android:backgroundTint="#145DA0"
         android:text="집안일 체크리스트"/>
 
@@ -28,15 +28,15 @@
         android:id="@+id/safetymap"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/map"
         android:backgroundTint="#145DA0"
-        android:text="안심 편의 지도"/>
+        android:drawableLeft="@drawable/map2"
+        android:text="안심 편의 지도" />
 
     <Button
         android:id="@+id/mypage"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/mypage"
+        android:drawableLeft="@drawable/mypage2"
         android:backgroundTint="#145DA0"
         android:text="마이페이지"/>
 
