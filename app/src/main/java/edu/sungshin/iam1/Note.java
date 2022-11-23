@@ -1,10 +1,12 @@
 package edu.sungshin.iam1;
 
-public class Todo {
+public class Note {
     int _id;
     String todo;
 
-    public Todo(int _id, String todo) {
+    public Note(int _id, String todo){
+        this._id = _id;
+        this.todo = todo;
     }
 
     public int get_id() {
