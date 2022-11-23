@@ -35,7 +35,6 @@ public class LoginActivity extends AppCompatActivity {
         pw = findViewById(R.id.edit_pwd);
 
         Button btn_login = (Button) findViewById(R.id.btn_login);
-        Button btn_forgot = (Button) findViewById(R.id.btn_forgot);
         Button btn_signin = (Button) findViewById(R.id.btn_signin);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
