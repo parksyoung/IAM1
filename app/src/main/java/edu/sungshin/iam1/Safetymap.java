@@ -19,7 +19,7 @@ public class Safetymap extends AppCompatActivity
         implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    Button call_112, call_119;
+    Button call_112, call_119 ,btn3,btn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,8 @@ public class Safetymap extends AppCompatActivity
 
         Button call_112 = (Button) findViewById(R.id.button1);
         Button call_119 = (Button) findViewById(R.id.button2);
+        Button btn3 = (Button) findViewById(R.id.button3);
+        Button btn4 = (Button) findViewById(R.id.button4);
 
         call_112.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +45,20 @@ public class Safetymap extends AppCompatActivity
                 Uri uri = Uri.parse("tel:/119");
                 Intent intent = new Intent(Intent.ACTION_DIAL, uri);
                 startActivity(intent);
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.co.kr/maps/?hl=ko"));
+                startActivity(mIntent);
+            }
+        });
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.safemap.go.kr/main/smap.do?flag=2"));
+                startActivity(mIntent);
             }
         });
 

@@ -10,39 +10,63 @@
     android:layout_margin="10dp">
 
     <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="520dp"
-        android:id="@+id/map"
-        tools:context=".MapsActivity"
-        android:name="com.google.android.gms.maps.SupportMapFragment" />
+        tools:context=".MapsActivity" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="  112"
-                android:textSize="25dp"
-                android:backgroundTint="@color/red"
-                android:drawableRight="@drawable/ringer1"
-                android:scaleType="fitCenter"
-                android:layout_margin="5dp"/>
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/red"
+            android:drawableRight="@drawable/ringer1"
+            android:scaleType="fitCenter"
+            android:text="  112"
+            android:textSize="25dp" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="  119"
-                android:textSize="25dp"
-                android:backgroundTint="@color/red"
-                android:drawableRight="@drawable/ringer1"
-                android:layout_margin="5dp"/>
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/red"
+            android:drawableRight="@drawable/ringer1"
+            android:text="  119"
+            android:textSize="25dp" />
 
-        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="400dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="15dp"
+        android:text="만약 지도가 안보이신다면, 클릭해 주세요!"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button1"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="400dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="30dp"
+        android:text="생활안심지도 바로가기"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button1"
+        android:layout_margin="5dp"/>
+
 </LinearLayout>
