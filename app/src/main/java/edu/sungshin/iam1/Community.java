@@ -1,10 +1,12 @@
 package edu.sungshin.iam1;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -146,6 +148,17 @@ public class Community extends AppCompatActivity implements View.OnClickListener
 
         //realtimedatabase add3
         databaseReference.child("memo").child(uid).push().setValue(item);
+        AlertDialog.Builder dlg = new AlertDialog.Builder(Community.this);
+        dlg.setTitle("메모 작성 완료"); //제목
+        dlg.setMessage("작성하신 메모가 리스트에 추가되었습니다."); // 메시지
+//                버튼 클릭시 동작
+        dlg.setPositiveButton("확인",new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which) {
+                //토스트 메시지
+                Toast.makeText(Community.this,"확인을 누르셨습니다.",Toast.LENGTH_SHORT).show();
+            }
+        });
+        dlg.show();
     }
     @Override
     protected void onStart() {
