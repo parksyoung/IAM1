@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/community2"
         android:backgroundTint="#145DA0"
-        android:text="자취인 메모장"/>
+        android:text="자취인 커뮤니티"/>
 
     <Button
         android:id="@+id/checklist"

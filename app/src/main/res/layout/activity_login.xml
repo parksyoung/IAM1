@@ -15,7 +15,8 @@
         android:layout_marginEnd="65dp"
         android:layout_marginBottom="33dp"
         android:gravity="center"
-        android:text="LOG IN"
+        android:text="로그인"
+        android:fontFamily="@font/neo"
         android:textColor="#41729F"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/edit_id"
@@ -29,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
+        android:fontFamily="@font/neo"
         android:hint="아이디"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/edit_pwd"
@@ -44,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
+        android:fontFamily="@font/neo"
         android:hint="비밀번호"
         android:inputType="textPassword"
         android:minHeight="48dp"
@@ -52,7 +55,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434" />
+        app:layout_constraintVertical_bias="0.449" />
 
     <Button
         android:id="@+id/btn_login"
@@ -60,29 +63,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:backgroundTint="#41729F"
-        android:text="@string/Login"
+        android:fontFamily="@font/neo"
+        android:text="로그인"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56">
-
-    </Button>
-
-    <Button
-        android:id="@+id/btn_forgot"
-        android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#41729F"
-        android:text="@string/Forgot"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684">
+        app:layout_constraintVertical_bias="0.591">
 
     </Button>
 
@@ -92,13 +80,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:backgroundTint="#41729F"
-        android:text="@string/Signup"
+        android:fontFamily="@font/neo"
+        android:text="회원가입"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.809">
+        app:layout_constraintTop_toTopOf="@+id/btn_login"
+        app:layout_constraintVertical_bias="0.192">
 
     </Button>
 
