@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Safetymap"
     android:orientation="vertical"
+    android:id="@+id/layout_main"
     android:layout_margin="10dp">
 
     <fragment
