@@ -37,6 +37,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:hint="아이디(이메일의 형식을 따르시오.)"
+        android:inputType="textEmailAddress"
         android:fontFamily="@font/neo"
         android:minHeight="48dp"/>
 

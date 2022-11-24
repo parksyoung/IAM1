@@ -33,6 +33,7 @@
         android:fontFamily="@font/neo"
         android:hint="아이디"
         android:minHeight="48dp"
+        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/edit_pwd"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
