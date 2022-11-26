@@ -10,40 +10,49 @@
 
     <Button
         android:id="@+id/community"
-        android:layout_width="250dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/community2"
         android:backgroundTint="#145DA0"
+        android:fontFamily="@font/neobold"
+        android:textSize="20dp"
         android:text="자취인 커뮤니티"/>
 
     <Button
         android:id="@+id/checklist"
-        android:layout_width="250dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/checklist"
         android:backgroundTint="#145DA0"
+        android:fontFamily="@font/neobold"
+        android:textSize="20dp"
         android:text="집안일 체크리스트"/>
 
     <Button
         android:id="@+id/safetymap"
-        android:layout_width="250dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#145DA0"
         android:drawableLeft="@drawable/map2"
+        android:fontFamily="@font/neobold"
+        android:textSize="20dp"
         android:text="안심 편의 지도" />
 
     <Button
         android:id="@+id/mypage"
-        android:layout_width="250dp"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/mypage2"
         android:backgroundTint="#145DA0"
+        android:fontFamily="@font/neobold"
+        android:textSize="20dp"
         android:text="마이페이지"/>
 
     <Button
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/neo"
         android:text="로그아웃" />
 
     <Button
@@ -51,6 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#991216"
+        android:fontFamily="@font/neo"
         android:text="회원탈퇴" />
 
 
