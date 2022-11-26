@@ -1,6 +1,7 @@
 package edu.sungshin.iam1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,6 +11,7 @@ import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -17,6 +19,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Safetymap extends AppCompatActivity
         implements OnMapReadyCallback {
+    private FragmentManager fragmentManager;
+    private MapFragment mapFragment;
+
 
     private GoogleMap mMap;
     Button call_112, call_119 ,btn3,btn4;
@@ -26,7 +31,9 @@ public class Safetymap extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_safetymap);
 
-        Button call_112 = (Button) findViewById(R.id.button1);
+
+
+            Button call_112 = (Button) findViewById(R.id.button1);
         Button call_119 = (Button) findViewById(R.id.button2);
         Button btn3 = (Button) findViewById(R.id.button3);
         Button btn4 = (Button) findViewById(R.id.button4);
@@ -63,7 +70,7 @@ public class Safetymap extends AppCompatActivity
         });
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(R.id.safetymap);
         mapFragment.getMapAsync(this);
     }
 
