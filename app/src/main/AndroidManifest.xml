@@ -17,7 +17,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCslEIJKOsOdiTkweyzMKiByygKj1hXZGI"/>
+            android:value="AIzaSyBkBYTZ77634tlreGQX-yXkEXiibGGxWgk"/>
 
         <activity
             android:name="edu.sungshin.HomeAlone.RegisterActivity"
