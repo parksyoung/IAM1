@@ -3,6 +3,7 @@ package edu.sungshin.HomeAlone;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.content.Intent;
@@ -21,6 +22,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
 
+    public static Context context_main;
+    public String strId, strPw;
+
     private FirebaseAuth mAuth; //파이어베이스 인증 처리
     private DatabaseReference mDB; // 실시간 데이터베이스
     private EditText id, pw;
@@ -34,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        context_main = this;
         // 설정값 불러오기
         appData = getSharedPreferences("appData", MODE_PRIVATE);
         load();
@@ -59,8 +64,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String strId = id.getText().toString();
-                String strPw = pw.getText().toString();
+                strId = id.getText().toString();
+                strPw = pw.getText().toString();
 
                 if(strId.length()>0 && strPw.length()>0){
                     mAuth.signInWithEmailAndPassword(strId, strPw).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
