@@ -10,15 +10,16 @@ import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Safetymap extends AppCompatActivity
-        implements OnMapReadyCallback {
+public class Safetymap extends AppCompatActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
+    GoogleMap gMap;
+    MapFragment mapFrag;
     Button call_112, call_119 ,btn3,btn4;
 
     @Override
@@ -62,27 +63,15 @@ public class Safetymap extends AppCompatActivity
             }
         });
 
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        mapFrag = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+        mapFrag.getMapAsync(this);
     }
 
     @Override
     public void onMapReady(final GoogleMap googleMap) {
-
-        mMap = googleMap;
-
-        LatLng SEOUL = new LatLng(37.56, 126.97);
-
-        MarkerOptions markerOptions = new MarkerOptions();         // 마커 생성
-        markerOptions.position(SEOUL);
-        markerOptions.title("서울");                         // 마커 제목
-        markerOptions.snippet("한국의 수도");         // 마커 설명
-        mMap.addMarker(markerOptions);
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(SEOUL));                 // 초기 위치
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(15));                         // 줌의 정도
-        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);                           // 지도 유형 설정
+        gMap = googleMap;
+        gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(37.568256, 126.897240), 15));
 
     }
 
