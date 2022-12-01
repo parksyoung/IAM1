@@ -1,4 +1,4 @@
-package edu.sungshin.iam1;
+package edu.sungshin.HomeAlone;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

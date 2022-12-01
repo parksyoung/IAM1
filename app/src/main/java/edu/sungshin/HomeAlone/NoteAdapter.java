@@ -1,7 +1,6 @@
-package edu.sungshin.iam1;
+package edu.sungshin.HomeAlone;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

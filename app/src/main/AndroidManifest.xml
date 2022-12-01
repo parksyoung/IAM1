@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.sungshin.iam1">
+    package="edu.sungshin.HomeAlone">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -20,13 +20,13 @@
             android:value="AIzaSyC3cEXV2IQ_LJEh6wJrlEgUJk1trqsy0Ng"/>
 
         <activity
-            android:name=".RegisterActivity"
+            android:name="edu.sungshin.HomeAlone.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name="edu.sungshin.HomeAlone.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".IntroActivity"
+            android:name="edu.sungshin.HomeAlone.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,22 +35,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Mypage"
+            android:name="edu.sungshin.HomeAlone.Mypage"
             android:exported="false" />
         <activity
-            android:name=".Safetymap"
+            android:name="edu.sungshin.HomeAlone.Safetymap"
             android:exported="false" />
         <activity
-            android:name=".Map"
+            android:name="edu.sungshin.HomeAlone.Map"
             android:exported="false" />
         <activity
-            android:name=".Checklist"
+            android:name="edu.sungshin.HomeAlone.Checklist"
             android:exported="false" />
         <activity
-            android:name=".Community"
+            android:name="edu.sungshin.HomeAlone.Community"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="edu.sungshin.HomeAlone.MainActivity"
             android:exported="false" />
 
 

@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:823199582433:android:f49d23028de737030b4fa0",
         "android_client_info": {
-          "package_name": "edu.sungshin.iam1"
+          "package_name": "edu.sungshin.HomeAlone"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "823199582433-8ufhq9odd4cgqu1igtknqp0s48no3cgm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "edu.sungshin.iam1",
+            "package_name": "edu.sungshin.HomeAlone",
             "certificate_hash": "a875bca8f82c9615630027232cea0e801514f82f"
           }
         },

@@ -1,4 +1,4 @@
-package edu.sungshin.iam1;
+package edu.sungshin.HomeAlone;
 
 import android.content.Intent;
 import android.os.Bundle;

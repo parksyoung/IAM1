@@ -1,4 +1,4 @@
-package edu.sungshin.iam1;
+package edu.sungshin.HomeAlone;
 
 public class Todo {
     int _id;

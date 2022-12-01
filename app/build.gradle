@@ -7,10 +7,10 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "edu.sungshin.iam1"
+        applicationId "edu.sungshin.HomeAlone"
         minSdk 21
         targetSdk 32
-        versionCode 1
+        versionCode 100
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
