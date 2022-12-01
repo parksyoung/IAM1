@@ -12,9 +12,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Mypage extends AppCompatActivity {
+    FirebaseAuth mAuth;
     ImageView imageView1;
-    Button button1;
+    Button logout, delAccount;
     String TAG = "MainActivity";
 
     @Override
@@ -22,15 +25,32 @@ public class Mypage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 
+        mAuth = FirebaseAuth.getInstance();
         imageView1 = findViewById(R.id.imageView2);
-        button1 = findViewById(R.id.prof_btn);
+        logout = findViewById(R.id.logout); // 로그아웃버튼
+        delAccount = findViewById(R.id.delAccount); // 회원탈퇴버튼
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_PICK);
-                intent.setType("image/*");
-                startActivityForResult(intent, 1);
+            public void onClick(View view) {
+                //로그아웃 버튼
+                mAuth.signOut();
+                Intent intent = new Intent(Mypage.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+                Toast.makeText(getApplicationContext(), "로그아웃 되었습니다.",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        delAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //탈퇴처리기능()
+                mAuth.getCurrentUser().delete();
+                Intent intent = new Intent(Mypage.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+                Toast.makeText(getApplicationContext(), "회원탈퇴 완료되셨습니다.",Toast.LENGTH_SHORT).show();
             }
         });
     }
